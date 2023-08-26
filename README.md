@@ -16,7 +16,7 @@ When a request is sent to the root of the server, it will send the infos of this
 #### Explaination:
 - The type parameter contains the type of the server that has started the backend feature. It can be **proxy** or **spigot**
 
-### Execute (EX VERSION! DEPRECATED)
+### Execute 
 
 **Page: .../execute**
 The execute context is used to send a command that should be performed in the console. The request must contain the following
