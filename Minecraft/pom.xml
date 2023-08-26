@@ -7,7 +7,11 @@
     <groupId>com.github.lory24</groupId>
     <artifactId>RemC-Minecraft</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
+    <modules>
+        <module>Spigot</module>
+        <module>Velocity</module>
+    </modules>
 
     <dependencies>
         <dependency>
