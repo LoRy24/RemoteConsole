@@ -6,6 +6,7 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
+import lombok.Getter;
 import org.slf4j.Logger;
 
 @SuppressWarnings("unused")
@@ -14,6 +15,7 @@ import org.slf4j.Logger;
         version = "1.0-SNAPSHOT",
         authors = {"LoRy24"}
 )
+@Getter
 public class Entry {
 
     @Inject
@@ -29,6 +31,7 @@ public class Entry {
             try {
                 if (!RemC.INSTANCE.enable(this))
                     break enablingBlock;
+
                 this.logger.info("Plugin enabled at version 1.0-SNAPSHOT!");
                 return;
             } catch (Exception e) {

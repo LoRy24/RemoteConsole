@@ -1,0 +1,19 @@
+settings:
+  key: "key"
+  allowedAddresses:
+    - "127.0.0.1"
+  current:
+    port: 32210
+
+  #
+  # Registered sub servers backends for specific commands execution
+  #
+  # Example server:
+  # test:
+  #   host: 127.0.0.1
+  #   port: 32211
+  #
+  servers: {}
+
+  messages:
+    prefix: "&8(&aRemoteConsole&8) &7"
