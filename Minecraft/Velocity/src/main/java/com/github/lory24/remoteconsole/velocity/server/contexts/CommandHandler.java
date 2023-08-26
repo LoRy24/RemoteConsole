@@ -14,6 +14,9 @@ public class CommandHandler implements HttpHandler {
 
     @Override
     public void handle(@NotNull HttpExchange exchange) throws IOException {
+        if (!ConfigValues.ALLOWED_ADDRESSES.getStringList().contains(exchange.getRemoteAddress().getHostString()))
+            exchange.close();
+
         // Read data
         byte[] requestData = exchange.getRequestBody().readAllBytes();
 
@@ -22,7 +25,7 @@ public class CommandHandler implements HttpHandler {
             ExecuteRequest executeRequest = RemC.gson.fromJson(new String(requestData), ExecuteRequest.class);
 
             // Authenticate the connection
-            if (!executeRequest.getKey().equals(ConfigValues.KEY.getString()) || !ConfigValues.ALLOWED_ADDRESSES.getStringList().contains(exchange.getRemoteAddress().getHostString())) {
+            if (!executeRequest.getKey().equals(ConfigValues.KEY.getString())) {
                 this.sendStatus(exchange, -2);
                 return;
             }
